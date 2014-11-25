@@ -1,0 +1,16 @@
+{
+  "name": "base",   
+  "configuration": {
+    "directive": {
+      "appVersion": "directives/appVersion"
+    },
+    "filter": {
+      "interpolate": "filters/interpolate"
+    }
+  },
+  "route": {
+    "otherwise": {
+      "redirectTo": "/dashboard"
+    }
+  }
+}

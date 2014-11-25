@@ -1,0 +1,8 @@
+logs/*
+!.gitkeep
+node_modules/
+public_html/vendor
+assets
+tmp
+.DS_Store
+.idea

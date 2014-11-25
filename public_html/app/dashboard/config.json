@@ -1,0 +1,33 @@
+{
+  "name": "dashboard",   
+  "configuration": {
+    "controller": {
+      "MyCtrl1": ["$scope","CalculatorService","controllers/MyCtr1"],
+      "MyCtrl2": "controllers/MyCtr2"
+    },
+    "service": {
+      "MathService": "services/MathService",
+      "CalculatorService": "services/CalculatorService"
+    }
+  },
+  "route": {
+    "/": {
+      "templateUrl": "templates/partial1.html",
+      "controller": "MyCtrl1"
+    },
+    "/view1": {
+      "templateUrl": "templates/partial1.html",
+      "controller": "MyCtrl1"
+    },
+     "/view2/:name?": {
+      "templateUrl": "templates/partial2.html",
+      "controller": "MyCtrl2"
+    },
+    "/omid": {
+      "redirectTo": "/dashboard/view2/omid"
+    }, 
+    "otherwise": {
+      "redirectTo": "/dashboard/view2"
+    }
+  }
+}
