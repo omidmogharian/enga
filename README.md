@@ -1,5 +1,5 @@
 ## enga - Enterprise Architecture for AngularJS
-a code structure of for app development
+a code structure for app development
 
 - `verison: 0.5.1`
 
