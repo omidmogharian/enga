@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "login": {
+      "name": "omid mo",
+      "picture": "http://www.videobeat.net/profile/thumbnail_100_100/andreasgroke.jpg",
+      "email": "omid@videobeat.net",
+      "permissions": [],
+      "spueradmin": true
+    },
+    "hasPermission": true
+  }
+}

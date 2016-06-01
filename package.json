@@ -1,34 +1,261 @@
 {
-  "name": "angular-seed",
-  "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "name": "enga",
+  "dependencies": {
+    "aliasify": "^1.7.2",
+    "angular-sanitize": "^1.4.8",
+    "babelify": "^6.0.2",
+    "bower": "^1.7.1",
+    "browserify": "latest",
+    "browserify-es6-transpiler": "0.0.3",
+    "browserify-shim": "latest",
+    "clone": "^1.0.2",
+    "del": "^2.0.2",
+    "es6-transpiler": "^0.7.18",
+    "es6ify": "latest",
+    "glob": "^5.0.14",
+    "gulp": "latest",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-browserify": "latest",
+    "gulp-clean": "latest",
+    "gulp-concat": "latest",
+    "gulp-debug": "2.0.1",
+    "gulp-es6-module-transpiler": "latest",
+    "gulp-es6-transpiler": "latest",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-traceur": "latest",
+    "gulp-util": "latest",
+    "gulp-wait": "0.0.2",
+    "gulp-webserver": "latest",
+    "install": "^0.4.1",
+    "is-there": "^1.1.0",
+    "jquery": "latest",
+    "lodash": "^3.10.1",
+    "lodash.assign": "^3.2.0",
+    "minimatch": "^2.0.10",
+    "miniwatch": "^0.1.1",
+    "opn": "^3.0.2",
+    "readable-stream": "^2.0.2",
+    "run-sequence": "^1.0.2",
+    "through2": "latest",
+    "tildify": "^1.0.0",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-fs": "^0.3.13",
+    "vinyl-source-stream": "latest",
+    "watchify": "^3.4.0",
+    "yargs": "latest"
+  },
+  "version": "0.1.0",
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "aliasify"
+    ]
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "angular": "./vendor/angular/angular.js",
+    "ngRoute": "./vendor/angular-route/angular-route.js",
+    "ngCookies": "./vendor/angular-cookies/angular-cookies.js",
+    "stepFormWizard": "./vendor/plugins/step-form-wizard/js/step-form-wizard.js",
+    "ionRangeSlider": "./vendor/plugins/ion-slider/ion.rangeSlider.js",
+    "iCheck": "./vendor/plugins/icheck/icheck.js",
+    "dropzone": "./vendor/plugins/dropzone/dropzone.js",
+    "progressBar": "./vendor/plugins/bootstrap-progressbar/bootstrap-progressbar.js",
+    "tagsInput": "./vendor/plugins/bootstrap-tags-input/bootstrap-tagsinput.js",
+    "interactiveMap": "./vendor/plugins/maps-amcharts/ammap/ammap.js",
+    "fileupload": "./vendor/plugins/jquery-file-upload/js/jquery.fileupload.js",
+    "ngFileUpload": "./vendor/ng-file-upload/ng-file-upload.js",
+    "bootstrap": "./vendor/bootstrap/dist/js/bootstrap.js",
+    "ngTypeahead": "./vendor/ng-typeahead/ng-typeahead.js",
+    "angular-ui-bootstrap-templates": "./vendor/angular-bootstrap/ui-bootstrap-tpls.js",
+    "angular-ui-bootstrap": "./vendor/angular-bootstrap/ui-bootstrap.js",
+    "ngCkeditor": "./vendor/ng-ckeditor/ng-ckeditor.js",
+    "ckeditor": "./vendor/ckeditor/ckeditor.js",
+    "summernote": "./vendor/summernote/dist/summernote.js",
+    "Highcharts": "./vendor/plugins/highcharts/js/highcharts.src.js",
+    "HighchartsMore": "./vendor/plugins/highcharts/js/highcharts-more.src.js",
+    "HighchartsRegression": "./vendor/plugins/highcharts/highcharts-regression.js",
+    "HighchartsExporting": "./vendor/plugins/highcharts/js/modules/exporting.js",
+    "angular-summernote": "./vendor/angular-summernote/dist/angular-summernote.js",
+    "DataTables": "./vendor/plugins/DataTables/media/js/jquery.dataTables.js",
+    "ui.router": "./vendor/angular-ui-router/release/angular-ui-router.js",
+    "angular-sanitize": "./vendor/angular-sanitize/angular-sanitize.js",
+    "underscore": "./node_modules/underscore/underscore.js"
+  },
+  "aliasify": {
+    "aliases": {
+      "enga": "./src/js/lib/enga/enga.js",
+      "bridge": "./src/js/lib/bridge.js",
+      "jsonRpcClient": "./src/js/lib/jsonRpcClient.js",
+      "wCookies": "./src/js/lib/wcookies.js"
+    }
+  },
+  "browserify-shim": {
+    "jquery": "jQuery",
+    "underscore": {
+      "exports": "_"
+    },
+    "angular": {
+      "depends": [
+        "jquery:jQuery"
+      ],
+      "exports": "angular"
+    },
+    "ngRoute": {
+      "depends": "angular"
+    },
+    "ngCookies": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "stepFormWizard": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "ionRangeSlider": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "iCheck": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "dropzone": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "progressBar": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "tagsInput": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "interactiveMap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "fileupload": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "ngFileUpload": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "ngTypeahead": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-ui-bootstrap-templates": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-ui-bootstrap": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "ngCkeditor": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-sanitize": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "ngSanitize"
+    },
+    "ckeditor": {
+      "exports": "CKEDITOR"
+    },
+    "Highcharts": {
+      "depends": [
+        "jquery:jQuery"
+      ],
+      "exports": "Highcharts"
+    },
+    "HighchartsMore": {
+      "depends": [
+        "jquery:jQuery",
+        "Highcharts:Highcharts"
+      ]
+    },
+    "HighchartsRegression": {
+      "depends": [
+        "jquery:jQuery",
+        "Highcharts:Highcharts"
+      ]
+    },
+    "HighchartsExporting": {
+      "depends": [
+        "jquery:jQuery",
+        "Highcharts:Highcharts"
+      ]
+    },
+    "DataTables": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "summernote": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "angular-summernote": {
+      "depends": [
+        "angular",
+        "summernote"
+      ]
+    },
+    "ui.router": {
+      "depends": [
+        "angular"
+      ]
+    }
+  },
+  "description": "Enterprise Angularjs Architecture ",
+  "main": "gulpfile.js",
   "devDependencies": {
-    "karma": "~0.10",
-    "protractor": "~0.20.1",
-    "http-server": "^0.6.1",
-    "bower": "^1.3.1",
-    "shelljs": "^0.2.6",
-    "karma-junit-reporter": "^0.2.2"
+    "chai": "^2.2.0",
+    "gulp-eslint": "^0.9.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-mocha": "^0.1.10",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1"
   },
   "scripts": {
-    "postinstall": "bower install",
-
-    "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000",
-
-    "pretest": "npm install",
-    "test": "karma start test/karma.conf.js",
-    "test-single-run": "karma start test/karma.conf.js  --single-run",
-
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
-
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor test/protractor-conf.js",
-
-    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
-  }
+    "test": "NODE_ENV=test karma start"
+  },
+  "author": "omid.mogharian@gmail.com",
+  "license": "ISC"
 }

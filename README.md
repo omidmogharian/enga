@@ -1,49 +1,53 @@
-enga - Enterprise Architecture for AngularJS
-====================================
-> ** v0.1 **
+## enga - Enterprise Architecture for AngularJS
+a code structure of for app development
 
-This architecture designed to use angular in enterprise module-based projects.
+- `verison: 0.5.1`
 
-## Main Features
-- Use requireJs as module loader
-- Provide a standard module-based structure
-- Easy to mange routes for each module via config file
-- Load configurations (controllers, services, directives, ...) via config file
-- Extendable modules
-- Completely independante and resuable modules
-- Flexible coding (filing) inside of module folder
+# Folder structure
 
-## enga Structure
-*coming soon!*
+```
+enga/
+  |- .build/
+  |- _data/
+  |- _html/
+  |- _doc/
+  |  |- <service>_<version>/
+  |- public/
+  |  |- assets/
+  |  |- templates/
+  |  |- index.html
+  |- src/
+  |  |- js/
+  |  |  |- app/
+  |  |  |- cas/
+  |  |  |- lib/
+  |  |  |- init.js
+  |  |  |- setting.js
+  |  |- less/
+    |  |- less/
+  |- vendor/
+  |  |- ....
+  |- gulpfile.js
+  |- package.json
 
-## Working with module and Config file
-*coming soon!*
+```
 
-## Setup your app
-easy! in app.js use enga factory with this parameters :
-1. Set your app name
-2. Add your module named (folder name)
-3. Angular Dependencies
-4. A callback function for having general and basic stuff!
+- `.build/` - a folder which will be generated after each build, it's a es5 version of src/js folder
+- `_data/` -  each json file inside, automaticly will register as mocking service in cas/mockingService
+- `_html/` -  for static html
+- `_doc/` - for storing docs and data schema
 
- ```javascript
+- `src/js/app/` - application-specific code, i.e. angular module.
+- `src/js/cas/` - central access to servicess
+- `src/js/lib/` - library place
+- `src/js/init.js` - app initilization, initilize enga and set the bridge for data up
+- `src/js/setting.js` - global setting as well as any others
 
-	define(['enga'],function(eana){
+- `public/assets/` - static files like fonts and images and bundled js and css
+- `public/assets/templates` - partial templates of modules
+- `public/index.html` - this is the main HTML document of project
 
-		eana.factory (
-		/* Angular AppName  */
-		'angular_skelton',
-		/* Modules list (load synchronize) | if base/confing.json is available base module will be added automaticly| */
-		['dashboard'],
-		/* Angular Dependencies */
-		['ngRoute','ngAnimate','AngularAOP','angular-loading-bar'],
-		/* Here is a function with available ng modules */
-		function (app) {
-			'use strict';
+- `vendor/` - third-party libraries and components mostly from bowers
+- `gulpfile.js` - key command to run with gulp: gulp , build(for just build, without browserify)  genarate-module --name=<yourmodulename>
+- `package.json` - not only for npm pakages but also for alias names and browserify shim
 
-			/* Genearl and final */
-			app.value('version', '0.1');
-
-		});
-	})
- ``` 
